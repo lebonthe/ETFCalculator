@@ -50,56 +50,7 @@ class ViewController: UIViewController {
     
     
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
 
-        lowestFeeTextField.text = "0"
-        // 設定 slider 初始值
-        feeDiscountSlider.value = 100
-        // 設定 slider 的極大值與極小值
-        feeDiscountSlider.maximumValue = 100
-        feeDiscountSlider.minimumValue = 0
-        // 設定 slider 從 tint 到極小值條狀的顏色
-        feeDiscountSlider.minimumTrackTintColor = UIColor(red: 84/255, green: 73/255, blue: 75/255, alpha: 1)
-        // 設定 slider 從 tint 到極大值條狀的顏色
-        feeDiscountSlider.maximumTrackTintColor = UIColor(red: 179/255, green: 57/255, blue: 81/255, alpha: 1)
-
-        // 設定一個圖片與其大小，放到 tint 上
-        let thumbImage = UIImage(systemName: "person.crop.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 24))
-        // tint 不移動時的圖片
-        feeDiscountSlider.setThumbImage(thumbImage, for: .normal)
-        // tint 移動時的圖片
-        feeDiscountSlider.setThumbImage(thumbImage, for: .highlighted)
-        // 設定 Segmented Control 的字體大小
-        segmentedControl.setTitleTextAttributes([.font:  UIFont.systemFont(ofSize: 17)], for: .normal)
-        // 設定 Segmented Control 的字體顏色
-        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor(red: 84/255, green: 73/255, blue: 75/255, alpha: 1)], for: .normal)
-        // 設定被選到的 Segmented Control 的背景顏色
-        segmentedControl.selectedSegmentTintColor = UIColor(cgColor: CGColor(red: 241/255, green: 241/255, blue: 237/255, alpha: 1))
-        // 設定 Switch 狀態為 On ，並開啟動畫效果
-        unitSwitch.setOn(true, animated: true)
-        // 設定 Switch 滑塊顏色
-        unitSwitch.thumbTintColor = UIColor(named: "accentColor")
-        // 設定 Switch On 狀態的顏色
-        unitSwitch.onTintColor = UIColor(cgColor: CGColor(red: 145/255, green: 199/255, blue: 177/255, alpha: 1))
-        // 折數解釋 Label 隱藏
-        explainLabel.isHidden = true
-        // 問號預設為 Accent Color 顏色
-        explainDiscountButton.tintColor = UIColor(named: "accentColor")
-        
-        lowestFee = "0" // 最低手續費
-        interest = "" // 配息
-        buyprice = "" // 價格
-        amount = "" // 數量
-        
-        lowestFeeTextField.delegate = self
-        interestTextField.delegate = self
-        priceTextField.delegate = self
-        amountTextField.delegate = self
-        
-    }
     // 點一下收鍵盤
     @IBAction func closeKeyboard(_ sender: Any) {
         // 收起 view 中所有正在編輯的textField 的鍵盤
