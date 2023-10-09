@@ -50,7 +50,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-]
+        
         lowestFeeTextField.text = "0"
         // 設定 slider 初始值
         feeDiscountSlider.value = 100
